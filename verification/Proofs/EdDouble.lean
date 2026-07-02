@@ -215,6 +215,7 @@ theorem proj_double_spec (p : ProjPoint) (hp : ProjValid p) :
   let* ⟨ YY, YY_post1, YY_post2 ⟩ ← square_spec' by edis
   -- ZZ2 ← square2 p.Z          ⟪ZZ2⟫ = 2·(⟪p.Z⟫·⟪p.Z⟫),  Bnd 2⁵³
   let* ⟨ ZZ2, ZZ2_post1, ZZ2_post2 ⟩ ← square2_spec' by edis
+  -- v4.1.2 ORDER (differs from the v4.1.3/risc0 body — same ops, reordered):
   -- X_plus_Y ← p.X + p.Y       (unreduced add of two reduced values, Bnd 2⁵³)
   let* ⟨ XpY, XpY_post1, XpY_post2 ⟩ ← add_spec'' by edis
   -- X_plus_Y_sq ← square X_plus_Y
